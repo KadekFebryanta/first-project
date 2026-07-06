@@ -1,0 +1,52 @@
+.main {
+        height: 100vh;
+    }
+
+    .sidebar {
+        background: #808080;;
+        color: white;
+    }
+
+    .sidebar a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 20px 10px;
+    }
+
+    .sidebar a:hover {
+        background: #000;
+    }
+
+    .active {
+        background: #000;
+        border-right: solid 5px orange;
+    }
+
+    .card-data {
+        color: #fff;
+        border: solid 1px;
+        padding: 20px 45px;
+    }
+
+    .card-data i{
+        font-size: 70px;
+    }
+
+    .card-desc {
+        font-size: 35px;
+    }
+
+    .card-count {
+        font-size: 25px;
+    }
+
+    .card-data.buku {
+        background-color: teal;
+    }
+    .card-data.kategori {
+        background-color: orangered;
+    }
+    .card-data.user {
+        background-color: burlywood;
+    }
