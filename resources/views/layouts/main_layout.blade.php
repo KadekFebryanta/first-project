@@ -30,13 +30,14 @@
                         @if (Auth::user()->role_id == 1)
                         <a href="dashboard" @if (request()->route()->uri == 'dashboard') class="active" 
                             @endif>Dashboard</a>
-                        <a href="buku" @if (request()->route()->uri == 'buku') class="active" 
+                        <a href="buku" @if (request()->route()->uri == 'buku' 
+                            || request()->route()->uri == 'add-buku') class="active" 
                             @endif>Buku</a>
                         <a href="kategori" @if (request()->route()->uri == 'kategori' 
-                        || request()->route()->uri == 'tambah-kategori' 
-                        || request()->route()->uri == 'delete-view-kategori' 
-                        || request()->route()->uri == 'edit-kategori/{slug}' 
-                        || request()->route()->uri == 'delete-kategori/{slug}') class="active" 
+                            || request()->route()->uri == 'tambah-kategori' 
+                            || request()->route()->uri == 'delete-view-kategori' 
+                            || request()->route()->uri == 'edit-kategori/{slug}' 
+                            || request()->route()->uri == 'delete-kategori/{slug}') class="active" 
                             @endif>Kategori</a>
                         <a href="user" @if (request()->route()->uri == 'user') class="active" 
                             @endif>User</a>

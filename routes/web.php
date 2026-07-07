@@ -15,7 +15,11 @@ Route::middleware(['cek.login', 'only.admin'])->group(function () {
         return view('welcome');
     });
     Route::get('dashboard', [DashboardController::class, 'index']);
+
+    // Route buku
     Route::get('buku', [BukuController::class, 'index']);
+    Route::get('add-buku', [BukuController::class,'add']);
+    Route::post('add-buku', [BukuController::class,'store']);
 
     // Route kategori
     Route::get('kategori', [KategoriController::class, 'index']);

@@ -27,7 +27,7 @@ class KategoriController extends Controller
         ]);
 
         $kategori = Kategori::create($request->all());
-        return redirect('kategori')->with('status', 'Tambah kategori berhasil');
+        return redirect('kategori')->with('status', 'Kategori buku berhasil ditambahkan');
 
     }
 
