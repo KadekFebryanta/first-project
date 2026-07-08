@@ -1,11 +1,11 @@
 @extends('layouts.main_layout')
 
-@section('title', 'Delete Kategori')
+@section('title', 'Delete Buku')
 
 @section('content')
-    <h1>Delete Kategori List</h1>
+    <h1>Delete Buku List</h1>
     <div class="mt-4">
-        <a href="/kategori" class="btn btn-danger">Back</a>
+        <a href="/buku" class="btn btn-danger">Back</a>
     </div>
     <div class="mt-4">
         @if (session('status'))
@@ -20,7 +20,8 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama</th>
+                    <th>Kode_Buku</th>
+                    <th>Title</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -28,9 +29,10 @@
                 @foreach ( $deleteView as $item )
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->kode_buku }}</td>
+                        <td>{{ $item->title }}</td>
                         <td>
-                            <a href="/restore-kategori/{{ $item->slug }}">Kembalikan</a>
+                            <a href="/restore-buku/{{ $item->slug }}">Kembalikan</a>
                         </td>
                     </tr>
                 @endforeach
@@ -38,4 +40,3 @@
         </table>
     </div>
 @endsection
-    

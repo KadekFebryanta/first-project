@@ -64,7 +64,7 @@ class KategoriController extends Controller
     {
         $kategori = Kategori::where('slug', $slug)->first();
         $kategori->delete();
-        return redirect('kategori')->with('status', 'Delete kategori berhasil');
+        return redirect('kategori')->with('status', 'Kategori berhasil dihapus');
     }
 
     public function deleteView()

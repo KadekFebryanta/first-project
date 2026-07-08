@@ -28,26 +28,29 @@
             <div class="row g-0 h-100">
                 <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarTogglerDemo02">
                         @if (Auth::user()->role_id == 1)
-                        <a href="dashboard" @if (request()->route()->uri == 'dashboard') class="active" 
+                        <a href="/dashboard" @if (request()->route()->uri == 'dashboard') class="active" 
                             @endif>Dashboard</a>
-                        <a href="buku" @if (request()->route()->uri == 'buku' 
-                            || request()->route()->uri == 'add-buku') class="active" 
+                        <a href="/buku" @if (request()->route()->uri == 'buku' 
+                            || request()->route()->uri == 'add-buku' 
+                            || request()->route()->uri == 'edit-buku/{slug}'
+                            || request()->route()->uri == 'delete-buku/{slug}'
+                            || request()->route()->uri == 'delete-view-buku') class="active"
                             @endif>Buku</a>
-                        <a href="kategori" @if (request()->route()->uri == 'kategori' 
+                        <a href="/kategori" @if (request()->route()->uri == 'kategori' 
                             || request()->route()->uri == 'tambah-kategori' 
-                            || request()->route()->uri == 'delete-view-kategori' 
-                            || request()->route()->uri == 'edit-kategori/{slug}' 
-                            || request()->route()->uri == 'delete-kategori/{slug}') class="active" 
+                            || request()->route()->uri == 'edit-kategori/{slug}'
+                            || request()->route()->uri == 'delete-kategori/{slug}' 
+                            || request()->route()->uri == 'delete-view-kategori') class="active" 
                             @endif>Kategori</a>
-                        <a href="user" @if (request()->route()->uri == 'user') class="active" 
+                        <a href="/user" @if (request()->route()->uri == 'user') class="active" 
                             @endif>User</a>
-                        <a href="riwayat" @if (request()->route()->uri == 'riwayat') class="active" 
+                        <a href="/riwayat" @if (request()->route()->uri == 'riwayat') class="active" 
                             @endif>Riwayat</a>
-                        <a href="logout">Logout</a>
+                        <a href="/logout">Logout</a>
                         @else
-                        <a href="profile" @if (request()->route()->uri == 'profile') class="active" 
+                        <a href="/profile" @if (request()->route()->uri == 'profile') class="active" 
                             @endif>Profil</a>
-                        <a href="logout">Logout</a>
+                        <a href="/logout">Logout</a>
                         @endif
                 </div>
                 <div class="content p-5 col-lg-10">

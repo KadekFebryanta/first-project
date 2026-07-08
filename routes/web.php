@@ -20,6 +20,13 @@ Route::middleware(['cek.login', 'only.admin'])->group(function () {
     Route::get('buku', [BukuController::class, 'index']);
     Route::get('add-buku', [BukuController::class,'add']);
     Route::post('add-buku', [BukuController::class,'store']);
+    Route::get('edit-buku/{slug}', [BukuController::class,'edit']);
+    Route::post('edit-buku/{slug}', [BukuController::class,'update']);
+    Route::get('delete-buku/{slug}', [BukuController::class,'delete']);
+    Route::get('destroy-buku/{slug}', [BukuController::class,'destroy']);
+    Route::get('delete-view-buku', [BukuController::class,'deleteView']);
+    Route::get('restore-buku/{slug}', [BukuController::class,'restore']);
+
 
     // Route kategori
     Route::get('kategori', [KategoriController::class, 'index']);
