@@ -42,7 +42,11 @@
                             || request()->route()->uri == 'delete-kategori/{slug}' 
                             || request()->route()->uri == 'delete-view-kategori') class="active" 
                             @endif>Kategori</a>
-                        <a href="/user" @if (request()->route()->uri == 'user') class="active" 
+                        <a href="/user" @if (request()->route()->uri == 'user'
+                            || request()->route()->uri == 'registered-user' 
+                            || request()->route()->uri == 'view-user' 
+                            || request()->route()->uri == 'detail-user/{slug}' 
+                            || request()->route()->uri == 'delete-user/{slug}') class="active" 
                             @endif>User</a>
                         <a href="/riwayat" @if (request()->route()->uri == 'riwayat') class="active" 
                             @endif>Riwayat</a>

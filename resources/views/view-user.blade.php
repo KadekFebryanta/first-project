@@ -1,24 +1,11 @@
 @extends('layouts.main_layout')
 
-@section('title', 'User')
+@section('title', 'View Deleted User')
 
 @section('content')
-    <h1>Halaman User</h1>
+    <h1>Halaman Deleted User</h1>
 
-    <div class="mt-4 d-flex justify-content-end">
-        <a href="view-user" class="btn btn-secondary me-2">View Banned User</a>
-        <a href="/registered-user" class="btn btn-primary me-2">New Registered User</a>
-    </div>
-
-    <div class="mt-4">
-        @if (session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
-            </div>
-        @endif
-    </div>
-
-    <div class="my-3">
+    <div class="my-5">
         <table class="table">
             <thead>
                 <tr>
@@ -31,7 +18,7 @@
 
             {{-- Mengisi data untuk tabel --}}
                 <tbody>
-                    @foreach ($user as $item)
+                    @foreach ($view as $item)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->username }}</td>
@@ -43,8 +30,7 @@
                             @endif
                         </td>
                         <td>
-                            <a href="/detail-user/{{ $item->slug }}" class="btn btn-secondary">Detail</a>
-                            <a href="/delete-user/{{ $item->slug }}" class="btn btn-danger">Delete</a>
+                            <a href="/restore-user/{{ $item->slug }}" class="btn btn-primary">Restore</a>
                         </td>
                     </tr>
                     @endforeach

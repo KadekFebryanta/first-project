@@ -9,4 +9,3 @@
         <a href="/kategori" class="btn btn-danger">Cancel</a>
     </div>
 @endsection
-    

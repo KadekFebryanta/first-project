@@ -40,8 +40,17 @@ Route::middleware(['cek.login', 'only.admin'])->group(function () {
     Route::get('restore-kategori/{slug}', [KategoriController::class,'restore']);
 
 
-
+    // Route Users
     Route::get('user', [UserController::class, 'index']);
+    Route::get('registered-user', [UserController::class,'registeredUser']);
+    Route::get('detail-user/{slug}', [UserController::class,'detail']);
+    Route::get('approve-user/{slug}', [UserController::class,'approve']);
+    Route::get('delete-user/{slug}', [UserController::class,'delete']);
+    Route::get('destroy-user/{slug}', [UserController::class,'destroy']);
+    Route::get('view-user', [UserController::class,'view']);
+    Route::get('restore-user/{slug}', [UserController::class,'restore']);
+
+
     Route::get('riwayat', [RiwayatController::class, 'index']);
 });
 
