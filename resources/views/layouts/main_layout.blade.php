@@ -27,6 +27,7 @@
         <div class="body-content h-100">
             <div class="row g-0 h-100">
                 <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarTogglerDemo02">
+                    @if (Auth::user())
                         @if (Auth::user()->role_id == 1)
                         <a href="/dashboard" @if (request()->route()->uri == 'dashboard') class="active" 
                             @endif>Dashboard</a>
@@ -52,10 +53,15 @@
                             @endif>Riwayat</a>
                         <a href="/logout">Logout</a>
                         @else
+                        <a href="/" @if (request()->route()->uri == '/') class="active" 
+                            @endif>List Buku</a>
                         <a href="/profile" @if (request()->route()->uri == 'profile') class="active" 
                             @endif>Profil</a>
                         <a href="/logout">Logout</a>
                         @endif
+                        @else
+                        <a href="/login">Login</a>
+                    @endif
                 </div>
                 <div class="content p-5 col-lg-10">
                     @yield('content')

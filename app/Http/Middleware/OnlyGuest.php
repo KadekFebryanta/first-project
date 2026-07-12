@@ -16,10 +16,17 @@ class OnlyGuest
      */
     public function handle(Request $request, Closure $next): Response {
         
-        
-        if (Auth::user()) { 
-            return redirect('/buku');
+        if (Auth::check()) {
+        // ✅ Redirect sesuai role
+        if (Auth::user()->role_id == 1) {
+            return redirect('/dashboard'); // admin → dashboard
+        }
+        return redirect('/profile'); // user biasa → profile
         }
         return $next($request);
+        // if (Auth::user()) { 
+        //     return redirect('/');
+        // }
+        // return $next($request);
     }
 }
