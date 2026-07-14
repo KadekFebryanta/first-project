@@ -5,6 +5,7 @@ use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\RentBukuController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -60,6 +61,9 @@ Route::middleware(['cek.login', 'only.admin'])->group(function () {
     Route::get('view-user', [UserController::class,'view']);
     Route::get('restore-user/{slug}', [UserController::class,'restore']);
     Route::get('riwayat', [RiwayatController::class, 'index']);
+
+    // Route Peminjaman
+    Route::get('rent-buku', [RentBukuController::class, 'index']);
 });
 
 // Untuk Penyewa
