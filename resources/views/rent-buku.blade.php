@@ -7,10 +7,20 @@
 
     <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-md-3">
         <h1>Formulir Rental Buku</h1>
-        <form action="#" method="post">
+
+        <div class="mt-4">
+            @if (session('message'))
+                <div class="alert {{ session('alert-class') }}">
+                    {{ session('message') }}
+                </div>
+            @endif
+        </div>
+
+        <form action="rent-buku" method="post">
+            @csrf
             <div class="mb-3">
                 <label for="user" class="form-label">User</label>
-                <select name="user" id="user" class="form-control inputbox">
+                <select name="user_id" id="user" class="form-control inputbox">
                     <option value="">Pilih User</option>
                     @foreach ($users as $item )
                         <option value="{{ $item->id }}">{{ $item->username }}</option>
@@ -19,7 +29,7 @@
             </div>
             <div class="mb-3">
                 <label for="buku" class="form-label">Buku</label>
-                <select name="buku" id="buku" class="form-control inputbox">
+                <select name="buku_id" id="buku" class="form-control inputbox">
                     <option value="">Pilih Buku</option>
                     @foreach ($buku as $item)
                         <option value="{{ $item->id }}">{{ $item->title }}</option>

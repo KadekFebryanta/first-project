@@ -64,6 +64,7 @@ Route::middleware(['cek.login', 'only.admin'])->group(function () {
 
     // Route Peminjaman
     Route::get('rent-buku', [RentBukuController::class, 'index']);
+    Route::post('rent-buku', [RentBukuController::class, 'store']);
 });
 
 // Untuk Penyewa
