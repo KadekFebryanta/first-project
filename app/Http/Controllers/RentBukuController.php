@@ -14,7 +14,7 @@ class RentBukuController extends Controller
 {
     public function index()
     {
-        $users = User::where('id', '!=', 1)->get();
+        $users = User::where('id', '!=', 1)->where('status', '!=', 'inactive')->get();
         $buku = Buku::all();
         return view('rent-buku', ['users' => $users], ['buku' => $buku]);
     }

@@ -50,7 +50,7 @@
                             || request()->route()->uri == 'delete-user/{slug}') class="active" 
                             @endif>User</a>
                         <a href="/" @if (request()->route()->uri == '/') class="active"@endif>List Buku</a>
-                        <a href="rent-buku" @if (request()->route()->uri == 'rent-buku') class="active" 
+                        <a href="/rent-buku" @if (request()->route()->uri == 'rent-buku') class="active" 
                             @endif>Rental Buku</a>
                         <a href="/riwayat" @if (request()->route()->uri == 'riwayat') class="active"@endif>Riwayat</a>
                         <a href="/logout">Logout</a>

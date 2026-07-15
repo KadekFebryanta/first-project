@@ -3,10 +3,10 @@
 @section('title', 'Profile')
 
 @section('content')
-
-    <h1>
-        halaman profile
-    </h1>
+    <div class="mt-5">
+        <h1>halaman profile</h1>
+        <x-history-table :rentlog="$riwayat"/>
+    </div>
 
 @endsection
     

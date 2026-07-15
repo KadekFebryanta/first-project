@@ -60,11 +60,13 @@ Route::middleware(['cek.login', 'only.admin'])->group(function () {
     Route::get('destroy-user/{slug}', [UserController::class,'destroy']);
     Route::get('view-user', [UserController::class,'view']);
     Route::get('restore-user/{slug}', [UserController::class,'restore']);
-    Route::get('riwayat', [RiwayatController::class, 'index']);
 
     // Route Peminjaman
     Route::get('rent-buku', [RentBukuController::class, 'index']);
     Route::post('rent-buku', [RentBukuController::class, 'store']);
+    
+    // Route Riwayat
+    Route::get('riwayat', [RiwayatController::class, 'index']);
 });
 
 // Untuk Penyewa

@@ -34,5 +34,10 @@
             <a href="/user" class="btn btn-danger me-2">Back</a>
         </div>
     </div>
+
+    <div class="mt-5">
+        <h2>Riwayat Rental Penyewa</h2>
+        <x-history-table :rentlog="$riwayat"/>
+    </div>
 @endsection
     

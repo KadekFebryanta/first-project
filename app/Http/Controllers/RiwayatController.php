@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RentalLogs;
 use Illuminate\Http\Request;
 
 class RiwayatController extends Controller
 {
     public function index()
     {
-        return view('riwayat');
+        $riwayat = RentalLogs::with(['user', 'buku'])->get();
+        return view('riwayat', ['riwayat' => $riwayat]);
     }
 }
