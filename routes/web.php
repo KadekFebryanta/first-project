@@ -65,6 +65,7 @@ Route::middleware(['cek.login', 'only.admin'])->group(function () {
     Route::get('rent-buku', [RentBukuController::class, 'index']);
     Route::post('rent-buku', [RentBukuController::class, 'store']);
 
+    // Route Pengembalian Buku
     Route::get('return-buku', [RentBukuController::class, 'returnBuku']);
     Route::post('return-buku', [RentBukuController::class, 'save']);
     

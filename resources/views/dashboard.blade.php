@@ -42,26 +42,7 @@
     </div>
 
     <div class="mt-5">
-        <h2>Riwayat</h2>
-
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>User.</th>
-                    <th>Title Buku</th>
-                    <th>Rental Date</th>
-                    <th>Return Date</th>
-                    <th>Actual Return Date</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="7" style="text-align: center">no data</td>
-                </tr>
-            </tbody>
-        </table>
+        <x-history-table :rentlog="$riwayat"/>
     </div>
 @endsection
     
