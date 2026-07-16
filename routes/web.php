@@ -64,6 +64,9 @@ Route::middleware(['cek.login', 'only.admin'])->group(function () {
     // Route Peminjaman
     Route::get('rent-buku', [RentBukuController::class, 'index']);
     Route::post('rent-buku', [RentBukuController::class, 'store']);
+
+    Route::get('return-buku', [RentBukuController::class, 'returnBuku']);
+    Route::post('return-buku', [RentBukuController::class, 'save']);
     
     // Route Riwayat
     Route::get('riwayat', [RiwayatController::class, 'index']);

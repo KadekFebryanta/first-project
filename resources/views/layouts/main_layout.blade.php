@@ -52,6 +52,8 @@
                         <a href="/" @if (request()->route()->uri == '/') class="active"@endif>List Buku</a>
                         <a href="/rent-buku" @if (request()->route()->uri == 'rent-buku') class="active" 
                             @endif>Rental Buku</a>
+                        <a href="return-buku" @if (request()->route()->uri == 'return-buku') class="active" 
+                            @endif>Return Buku</a>
                         <a href="/riwayat" @if (request()->route()->uri == 'riwayat') class="active"@endif>Riwayat</a>
                         <a href="/logout">Logout</a>
                         @else

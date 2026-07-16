@@ -59,6 +59,35 @@ class RentBukuController extends Controller
                 }
             }
         }
+    }
 
+    public function returnBuku ()
+    {
+        $users = User::where('id', '!=', 1)->where('status', '!=', 'inactive')->get();
+        $buku = Buku::all();
+        return view('return-buku', ['users' => $users, 'buku' => $buku]);
+    }
+
+    public function save (Request $request)
+    {
+        $rent = RentalLogs::where('user_id', $request->user_id)->where('buku_id', $request->buku_id)
+        ->where('actual_return_date', null);
+        $rentData = $rent->first();
+        $countData = $rent->count();
+
+        if ($countData == 1) {
+            // akan return buku
+            $rentData->actual_return_date = Carbon::now()->toDateString();
+            $rentData->save();
+
+            Session::flash('message', 'Buku berhasil dikembalikan !!'); 
+            Session::flash('alert-class', 'alert-success'); 
+            return redirect('return-buku');
+        } else {
+            // eror notifikasi muncul
+            Session::flash('message', 'Gagal mengembalikan buku !!'); 
+            Session::flash('alert-class', 'alert-danger'); 
+            return redirect('return-buku');
+        }
     }
 }
